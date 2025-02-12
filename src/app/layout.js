@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
           </div>
 
           <div className="h-screen flex flex-row flex-wrap justify-start">
-            <div className="h-screen flex flex-row justify-start bg-white border-r border-gray-3">
+            <div className="flex flex-row justify-start bg-white border-r border-gray-3">
               <Sidebar />
             </div>
             <div className=" flex-1 p-4 text-black border">
