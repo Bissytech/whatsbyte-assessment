@@ -3,7 +3,9 @@ import React from "react";
 import { useState } from "react";
 import Modal from "../components/Modal";
 import Image from "next/image";
-import Studentchart from "../components/Studentchart";
+import Chart from "../components/Studentchart";
+import Piechart from "../components/PieChart";
+
 
 
 
@@ -106,7 +108,7 @@ const Skilltest = () => {
 
  <div className="  border border-gray-300 p-4 rounded-lg shadow-md mb-8">
  <h4 className="text-lg font-semibold">Comparison Graph</h4>
-  <div className="flex justify-between ">
+  <div className="flex justify-between  mb-5">
   <div><span className="font-bold">You scored {score.percentile} %percentile</span> which is lower than the average 72% of all the engineers who took the assessment </div> 
   <div className="flex items-center justify-center rounded-full bg-gray-200 w-10 h-10 shadow-mg"> 
   <Image
@@ -118,13 +120,13 @@ const Skilltest = () => {
   
   />
   <div>
-    <Studentchart/>
+
   </div>
   </div>
- {/* we include the graph */}
+ 
   </div>
 
-
+  <Chart percent={score.percentile} />
     </div>
 
 
@@ -162,7 +164,7 @@ const Skilltest = () => {
            <div className="rounded-md bg-orange-700 h-full" style={{width:'24%'}}></div>
            
             </div>
-            <span className="font-bold text-orange-700">60%</span>
+            <span className="font-bold text-orange-700">25%</span>
         </div>
     </div>
 
@@ -188,6 +190,8 @@ const Skilltest = () => {
         </div>
     
 <p>You scored {score.currentScore} questions correct out of 15. However it still needs improvement</p>
+
+<Piechart score={score.currentScore}/>
     </div>
 
 </div>

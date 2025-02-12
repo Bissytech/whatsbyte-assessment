@@ -7,16 +7,32 @@ const Modal = ({isVisible, onClose , onSave})=>{
   let [percentile , setPercentile] = useState('')
   let [currentScore , setCurrentScore] = useState('')
 
+  
+
   let handleSave = ()=> {
-    onSave( { rank : Number(rank) , percentile : Number(percentile) , currentScore: Number(currentScore)  })
-    onClose()
+    if(!rank.trim() || !percentile.trim() || !currentScore.trim() ){
+    alert('all fields are mandatory')
+    }
+   else if (  Number(rank) < 0 ||  Number(rank) > 15 ){
+      alert ('rank is not within range')
+    }else if(Number(percentile) < 0 || Number(percentile > 100)){
+      alert('Percentile is not within range')
+
+    } else if(Number(currentScore) < 0 || Number (currentScore)>15){
+      alert ('Current scrore is not within range')
+    }
+    else{
+      onSave( { rank : Number(rank) , percentile : Number(percentile) , currentScore: Number(currentScore)  })
+      onClose()
+    }
+  
   }
    
 
 
     if(!isVisible) return null;
     return(
-        <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center">
+        <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-start">
             <div className="w-[600px]">
                 <div className="bg-white p-2 rounded">
                   <div className="flex items-center justify-between p-2">

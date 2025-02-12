@@ -34,8 +34,8 @@ export default function RootLayout({ children }) {
              <div className="h-screen flex flex-row justify-start bg-white border-r border-gray-3">
   <Sidebar />
 </div> 
-            <div className="bg-red-300 flex-1 p-4 text-white border">
-<h2>display section</h2>
+            <div className=" flex-1 p-4 text-black border">
+            <h2>{children}</h2>
             </div>
           </div>
         
@@ -43,8 +43,6 @@ export default function RootLayout({ children }) {
 
       
         </div>
-       
-        <div>{children}</div>
         
       </body>
     </html>
