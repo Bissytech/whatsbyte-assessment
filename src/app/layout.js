@@ -22,28 +22,21 @@ import Skilltest from "./skilltest/page";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-     
       <body>
-        
         <div>
           <div className="w-full border-b border-gray-300 p-4">
-          <Navbar/>
+            <Navbar />
           </div>
 
-          <div className="h-screen flex flex-row justtify-start">
-             <div className="h-screen flex flex-row justify-start bg-white border-r border-gray-3">
-  <Sidebar />
-</div> 
+          <div className="h-screen flex flex-row flex-wrap justify-start">
+            <div className="h-screen flex flex-row justify-start bg-white border-r border-gray-3">
+              <Sidebar />
+            </div>
             <div className=" flex-1 p-4 text-black border">
-            <h2>{children}</h2>
+              <h2>{children}</h2>
             </div>
           </div>
-        
-       
-
-      
         </div>
-        
       </body>
     </html>
   );
